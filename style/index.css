@@ -555,42 +555,181 @@ footer .informations a:hover {
 /* ==========================================================================
    8. COMPATIBILITÉ MOBILE / TABLETTE
    ========================================================================== */
+/* ==========================================================================
+   8. ADAPTATION MOBILE (ÉCRANS DE MOINS DE 768PX)
+   ========================================================================== */
 @media (max-width: 768px) {
+    
+    /* --- Ajustements Globaux --- */
     body {
-        padding-top: 0;
+        padding: 0;
+        overflow-x: hidden; /* Sécurité absolue anti-débordement horizontal */
+    }
+
+    /* --- Écran d'accueil (.presentation) --- */
+    .presentation {
+        height: auto;
+        min-height: 100vh; /* Permet à l'accueil de s'agrandir si l'écran est minuscule */
+        padding: 40px 15px 80px 15px; /* Espace pour respirer sans étouffer */
+        box-sizing: border-box;
+        gap: 15px;
+    }
+
+    .presentation .logo {
+        width: 100%;
+        gap: 3vw; /* Ajustement de l'espace des décors sur mobile */
+    }
+
+    .presentation #logo_prom_body {
+        width: 45%; /* Le logo Vasia prend un peu plus de place sur mobile */
+    }
+
+    .presentation .deco2 {
+        width: 22%;
+    }
+
+    .presentation #deco1 {
+        width: 90px; /* Réduction du masque central */
+    }
+
+    .presentation .bal {
+        width: 100%;
+        gap: 10px;
     }
 
     .presentation .bal .nom {
-        font-size: 32px;
+        font-size: 28px; /* Évite que "Prom Night" ne se coupe ou passe à la ligne */
+    }
+
+    .presentation .bal .gradient1,
+    .presentation .bal .gradient2 {
+        width: 40px; /* Raccourcit les lignes dorées sur les côtés */
+    }
+
+    .presentation .lieu {
+        font-size: 13px; /* Texte plus fin et élégant pour le Colbert */
+    }
+
+    .presentation .lec {
+        flex-direction: column; /* Aligne "Commander" et "En savoir plus" l'un sous l'autre */
+        width: 100%;
+        max-width: 280px; /* Largeur idéale pour des boutons tactiles sur smartphone */
+        gap: 12px;
+        padding-top: 5px;
+    }
+
+    .presentation .lec .bouton {
+        padding: 14px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Cache la flèche du bas absolute si l'écran est trop petit pour éviter les superpositions */
+    .presentation #hypertexte {
+        display: none; 
+    }
+
+    /* --- Section Description (#desc) --- */
+    #desc {
+        padding: 60px 15px;
     }
 
     #desc #description h1 {
-        font-size: 52px;
-    }
-
-    #desc #infos {
-        flex-direction: column;
-        gap: 15px;
-        padding-top: 40px;
+        font-size: 46px; /* Ajustement du titre "À vos masques" */
     }
 
     #desc #description p {
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 1.6;
+        width: 95%;
+    }
+
+    #desc #infos {
+        flex-direction: column; /* Aligne les 3 blocs (Lieu, Date, DJ) verticalement */
+        gap: 15px;
+        padding-top: 35px;
+    }
+
+    #desc #infos .info {
+        width: 100%;
+        max-width: 290px; /* Évite qu'ils ne soient trop étirés */
+        height: auto;
+        padding: 20px 15px;
+    }
+
+    /* --- Section Cartes de Billets (#billets) --- */
+    #billets {
+        padding: 60px 15px;
+    }
+
+    #billets .petit_titre h1 {
+        font-size: 26px; /* Titre de section plus compact */
+    }
+
+    #billets .deux {
+        padding-top: 25px;
     }
 
     #billets .deux .section {
-        gap: 25px;
+        gap: 20px;
     }
 
     #billets .section .section_paiement {
         padding: 20px;
+        height: auto; /* Laisse la carte respirer selon son contenu */
     }
 
     #billets .section .section_paiement .info h4 {
-        font-size: 32px;
+        font-size: 28px; /* Prix plus adapté aux petits écrans */
+    }
+
+    #billets .section .section_paiement .info .restantes {
+        font-size: 11px;
+    }
+
+    #billets .section .section_paiement .gradient2 {
+        margin-top: 25px; /* Ajuste l'espace avant le bouton */
+    }
+
+    /* --- Section Modalités de paiement --- */
+    .modalite {
+        padding: 40px 15px;
     }
 
     .modalite .modalite_paiement {
         padding: 25px 20px;
+    }
+
+    .modalite .modalite_paiement .petit_titre h1 {
+        font-size: 24px;
+    }
+
+    .modalite .modalite_paiement #info p {
+        font-size: 13.5px;
+    }
+
+    /* --- Footer --- */
+    footer {
+        margin-top: 60px;
+        padding: 40px 15px 30px 15px;
+    }
+
+    footer #contacts h1 {
+        font-size: 24px;
+    }
+
+    footer .bloc-contacts {
+        flex-direction: column; /* Met "Appelez-nous" et "Email" l'un sous l'autre */
+        align-items: center;
+        gap: 10px;
+    }
+
+    footer .bloc-contacts .contact {
+        width: 100%;
+        max-width: 240px;
+    }
+
+    footer .bloc-contacts a {
+        padding: 10px 15px;
     }
 }
