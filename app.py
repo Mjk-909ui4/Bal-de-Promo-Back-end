@@ -19,7 +19,7 @@ def get_billet(id_billets):
 
     return results
 
-@app.route("/billets/str:<id_billets>")
+@app.route("/billets/<str:id_billets>")
 
 def billet(id_billets):
     data = get_billet(id_billets)
@@ -52,4 +52,3 @@ def billet(id_billets):
         <p>Nom : {nom}</p>
         <p>Tel : {numero}</p>
     """
-    
