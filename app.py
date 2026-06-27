@@ -52,3 +52,4 @@ def billet(id_billets):
         <p>Nom : {nom}</p>
         <p>Tel : {numero}</p>
     """
+    
