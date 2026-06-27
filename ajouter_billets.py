@@ -13,4 +13,6 @@ def ajouter_billet(id, nom, tel):
 
     conn.commit()
     conn.close()
-    
+
+
+ajouter_billet('VAS_001', 'Jao', '0329564811')
