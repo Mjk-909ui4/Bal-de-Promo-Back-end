@@ -13,3 +13,4 @@ def ajouter_billet(id, nom, tel):
 
     conn.commit()
     conn.close()
+    
