@@ -54,3 +54,8 @@ def valide_billets(id_billets):
         WHERE id_billets = ?
     """, (id_billets,)
     )
+
+    conn.commit()
+    conn.close()
+
+    return "Le billet a été validé avec succès ! Le client peut entrer."
