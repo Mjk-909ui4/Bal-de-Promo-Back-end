@@ -34,8 +34,26 @@ def billet(id_billets):
     else :
 
         return f"""
-        <h2>Billet Valide</h2>
+        <h2>Le billet est valide</h2>
         <p>ID : {id_billets}</p>
         <p>Nom : {nom}</p>
         <p>Tel : {numero}</p>
+        <a href:"https://bal-de-promo-back-end.onrender.com/confirmation/{id_billets}">CLIENT ENTRÉE<a>
     """
+
+@app.route("/confirmation/<string:id_billets")
+
+def valide_billets(id_billets):
+    conn = sqlite3.connect('billets.db')
+    cur = conn.cursor()
+
+    cur.execute(
+        """
+        UPDATE billets
+        SET utilise = 'OUI'
+        WHERE id_billets = ?
+    """, (id_billets,)
+    )
+
+    conn.commit()
+    conn.close()
