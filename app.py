@@ -41,7 +41,7 @@ def billet(id_billets):
         <a href:"https://bal-de-promo-back-end.onrender.com/confirmation/{id_billets}">CLIENT ENTRÉE<a>
     """
 
-@app.route("/confirmation/<string:id_billets")
+@app.route("/confirmation/<string:id_billets>")
 
 def valide_billets(id_billets):
     conn = sqlite3.connect('billets.db')
