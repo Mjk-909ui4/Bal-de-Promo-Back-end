@@ -38,7 +38,7 @@ def billet(id_billets):
         <p>ID : {id_billets}</p>
         <p>Nom : {nom}</p>
         <p>Tel : {numero}</p>
-        <a href:"https://bal-de-promo-back-end.onrender.com/confirmation/{id_billets}">CLIENT ENTRÉE<a>
+        <a href="https://bal-de-promo-back-end.onrender.com/confirmation/{id_billets}">CLIENT ENTRÉE<a>
     """
 
 @app.route("/confirmation/<string:id_billets>")
@@ -57,3 +57,5 @@ def valide_billets(id_billets):
 
     conn.commit()
     conn.close()
+
+    return "Le billet a été validé avec succès ! Le client peut entrer."
