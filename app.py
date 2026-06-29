@@ -38,11 +38,4 @@ def billet(id_billets):
         <p>ID : {id_billets}</p>
         <p>Nom : {nom}</p>
         <p>Tel : {numero}</p>
-        <a href="https://bal-de-promo-back-end.onrender.com/confirmation/{id_billets}">CLIENT ENTRÉE<a>
     """
-
-@apadskjfhoiudsgfchjbask
-dfhdsgfshlkcna
-sdhafjgdfuhsbbhcjkdhfa
-ajsdhgfaoduvjbcad
-hxavisdufv
